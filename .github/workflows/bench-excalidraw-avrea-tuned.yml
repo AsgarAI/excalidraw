@@ -1,0 +1,13 @@
+name: bench-excalidraw-avrea-tuned
+on:
+  workflow_dispatch:
+jobs:
+  install:
+    runs-on: avrea-ubuntu-latest-4-vcpu
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'yarn'
+      - run: yarn install --frozen-lockfile
