@@ -12,7 +12,6 @@ jobs:
       # Namespace runner profile must have caching enabled (out-of-band config).
       - uses: namespacelabs/nscloud-cache-action@v1
         with:
-          cache: |
-            ~/.cache/yarn
-            node_modules
+          cache: yarn
+          path: node_modules
       - run: yarn install --frozen-lockfile
